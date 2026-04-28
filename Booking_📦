@@ -1,0 +1,18 @@
+package com.project.model;
+
+import jakarta.persistence.*;
+
+@Entity
+public class Booking {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private Long userId;
+    private Long engineerId;
+    private String projectDetails;
+    private String status;
+
+    // Getters & Setters
+}

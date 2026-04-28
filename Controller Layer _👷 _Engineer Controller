@@ -1,0 +1,28 @@
+package com.project.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import com.project.model.Engineer;
+import com.project.service.EngineerService;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/engineers")
+@CrossOrigin
+public class EngineerController {
+
+    @Autowired
+    private EngineerService service;
+
+    @GetMapping
+    public List<Engineer> getAllEngineers() {
+        return service.getAllEngineers();
+    }
+
+    @PostMapping
+    public Engineer addEngineer(@RequestBody Engineer engineer) {
+        return service.addEngineer(engineer);
+    }
+}
