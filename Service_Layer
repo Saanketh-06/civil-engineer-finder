@@ -1,0 +1,23 @@
+package com.project.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.project.model.Engineer;
+import com.project.repository.EngineerRepository;
+
+import java.util.List;
+
+@Service
+public class EngineerService {
+
+    @Autowired
+    private EngineerRepository repo;
+
+    public List<Engineer> getAllEngineers() {
+        return repo.findAll();
+    }
+
+    public Engineer addEngineer(Engineer engineer) {
+        return repo.save(engineer);
+    }
+}
